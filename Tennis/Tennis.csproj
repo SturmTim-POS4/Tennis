@@ -16,4 +16,8 @@
     <Folder Include="Controllers" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TennisDb\TennisDb.csproj" />
+  </ItemGroup>
+
 </Project>

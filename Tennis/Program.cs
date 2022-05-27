@@ -5,6 +5,8 @@
 //----------------------------------------
 
 using Microsoft.OpenApi.Models;
+using Tennis.Services;
+using TennisDb;
 
 string corsKey = "_myAllowSpecificOrigins";
 string swaggerVersion = "v1";
@@ -14,6 +16,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 #region -------------------------------------------- ConfigureServices
 builder.Services.AddControllers();
+builder.Services.AddDbContext<TennisDbContext>();
+builder.Services.AddHostedService<FillDbService>();
+builder.Services.AddScoped<TennisService>();
+
 
 builder.Services
   .AddEndpointsApiExplorer()
