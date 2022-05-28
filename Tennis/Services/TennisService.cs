@@ -19,7 +19,7 @@ public class TennisService
     
     public IEnumerable<Booking> GetAllBookings()
     {
-        return _db.Bookings.AsEnumerable();
+        return _db.Bookings.Include(x => x.Person).AsEnumerable();
     }
     
     public Booking InsertBooking(Booking booking)

@@ -20,7 +20,7 @@ namespace Tennis.Controllers
         [HttpGet]
         public IEnumerable<BookingDto> Persons()
         {
-            return _TennisService.GetAllBookings().Select(x => new BookingDto().CopyPropertiesFrom(x)).ToList();
+            return _TennisService.GetAllBookings().Select(BookingDto.FromEntity).ToList();
         }
         
         [HttpPost]

@@ -3,12 +3,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BookingDto = void 0;
 var BookingDto = /** @class */ (function () {
-    function BookingDto(id, dayOfWeek, week, hour, personId) {
+    function BookingDto(id, dayOfWeek, week, hour, personId, person) {
         this.id = id;
         this.dayOfWeek = dayOfWeek;
         this.week = week;
         this.hour = hour;
         this.personId = personId;
+        this.person = person;
     }
     return BookingDto;
 }());
@@ -65,7 +66,7 @@ function fillBookings() {
         bookings.forEach(function (x) {
             if (x.week == week) {
                 console.log(x.id);
-                $("#".concat(x.hour, "-").concat(x.dayOfWeek)).text("hi");
+                $("#".concat(x.hour, "-").concat(x.dayOfWeek)).text(x.person.firstName + " " + x.person.lastName);
             }
         });
     });

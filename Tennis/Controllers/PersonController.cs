@@ -20,12 +20,7 @@ namespace Tennis.Controllers
         public IEnumerable<PersonDto> Persons()
         {
             return _TennisService.GetAllPeople()
-                .Select(x =>
-                {
-                    var newPerson = new PersonDto().CopyPropertiesFrom(x);
-                    newPerson.BookingCount = x.Bookings.Count;
-                    return newPerson;
-                })
+                .Select(PersonDto.FromEntity)
                 .ToList();
         }
     }

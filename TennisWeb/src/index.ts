@@ -54,7 +54,7 @@ function fillBookings() {
             bookings.forEach(x => {
                 if (x.week == week){
                     console.log(x.id)
-                    $(`#${x.hour}-${x.dayOfWeek}`).text("hi");
+                    $(`#${x.hour}-${x.dayOfWeek}`).text(x.person.firstName + " " + x.person.lastName)
                 }
             })
         })
