@@ -5,4 +5,8 @@
 .row{
     flex-direction: row;
     display: flex;
+    padding: 20px;
+}
+.grow{
+    flex-grow: 10;
 }
